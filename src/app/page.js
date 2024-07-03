@@ -19,7 +19,7 @@ const Home = () => {
     const fetchData = async () => {
       try {
         const result = await getRealEstateData();
-        console.log(result);
+        // console.log(result);
         setData(result);
       } catch (error) {
         setError(error);
@@ -31,7 +31,7 @@ const Home = () => {
     fetchData();
   }, []);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <div style={{ width: '100vw', height: '100vh' }}>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
 
   return (
