@@ -18,6 +18,7 @@ export const getRealEstateData = async () => {
   try {
     const response = await axios.get(URL, { params: queryParams });
     const estateItems = response.data.response.body;
+    // console.log(estateItems.items.item);
     return estateItems;
   } catch (error) {
     console.error('Error:', error);
