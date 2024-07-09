@@ -70,6 +70,7 @@ const NaverMap = () => {
   const fetchAddress = useCallback(async (lat, lng) => {
     try {
       const result = await axios.get(`/api/reverse-geocode?lat=${lat}&lng=${lng}`);
+      console.log(result.data);
       setAddress(result.data);
     } catch (error) {
       console.error('Error fetching address:', error);
