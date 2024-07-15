@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { SidebarComponent, NaverMap } from 'src/components';
 import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io';
-import { getRealEstateData } from '../utils/api';
+import { getRealEstateData } from '../../pages/api/real-estate-and-reverse-geocode';
 
 const Home = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -19,7 +19,6 @@ const Home = () => {
     const fetchData = async () => {
       try {
         const result = await getRealEstateData();
-        // console.log(result);
         setData(result);
       } catch (error) {
         setError(error);
